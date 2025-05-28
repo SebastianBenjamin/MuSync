@@ -266,16 +266,7 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
         import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyA_-SNMVZQVQM-eDK3aY_kGYg2hFigWTfo",
-            authDomain: "web-test-1-d3b35.firebaseapp.com",
-            databaseURL: "https://web-test-1-d3b35-default-rtdb.firebaseio.com",
-            projectId: "web-test-1-d3b35",
-            storageBucket: "web-test-1-d3b35.appspot.com",
-            messagingSenderId: "1006418965402",
-            appId: "1:1006418965402:web:2f8b1801b2cf7935c1c023",
-            measurementId: "G-DD9YCHZ247"
-        };
+ import { firebaseConfig } from './firebase-config.js';
 
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
