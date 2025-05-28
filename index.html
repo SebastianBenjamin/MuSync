@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MuSync</title>
+    
+    <link  href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEpUlEQVR4nO2Ya0wcVRTHx37QGBdS04dLd3YJFStIrbHSWSi0i/exDxbYZWcH1LIvgk0NiTQ1pPHVLSs0GuWDj6ZNjdaqTS1oipXHDGnS2Bi+mJqYaIxfjNGIMYGUD1gIsR4zs09godCdWTDZf3Ky2ZnZ3P/vnnPPvbMMk1NOOeVksVg2I0TaMCanEaLfIkR+Q4hOIURuIUT+wpj8gBAdQIi2WyzW4nUzY5TSnQjR8wiRWYwprDQQooM1NdS8puYxpp0Y07nVGF8MQk4KgnD3Gpgnb6QasTTaYPdLdVB60gXb+zxQeJkHo+RVovBLHnacbYRHe+qhMmQHRBZlYwxjvClr5gkhTfHB93tsimmjGDW7ktj+uQfKjzgBzcsGuZaVTFRXO+9HiEzKg5rba8E0mJzp1caOM26ocVpTM/GO5gAY0+MJ8yN3Zjw1is974MkYBELkH0JIqWbmw+HwBozJ7/sEOxQOZW4+HiWnXKml1K8ZAEJWTh7kkXddqpk3xkLOaCwLtyilWzUCIEctbiuYVrFgV1xKnzYCjnUnQsgzmgBgTC48cbROVeM7LzSD5wU/BNpC8HTgADgcTnkxn9MEwOms+/7xM03qzfolAfwHQxAKhSAYDEJDgwsotQEh1gm73X6PqubtdufhYDD4b0mfegD0RItiXg6Ph1+4Qx9TzTzG1oOC0KQMVPSVoBpA0/OBBIDd7li4O/+sIgD9saXFpwyU2vsD352AP2cnYXxmAvzXe9KaXO4Zf1swAUBIckOLxU3VABAif8s1uhBANhXXHzMTaQGWe6a5I5kBm03jDPh8vkUllCnAcmsAY/qqagDyi0p8DRQPJAHkkpANysZ817vTAiz3zMIu5HK5lS5EqfWi6l3I4XB0BALBuYe/UK8LyVEm7wOdfgg8G1L2g+bmAzWMVmptbS0v6W+aSdvTP/Eocbtry8YIP8loLaPEj6WdybcawHzIMe9axaFaKOtd+bmJlbw/aWr+vrB5l77feSPd4PLpdK/PAZVBB+x+sU75rPLb074vGD6rh4JwNRQc3wfGoeR9VvRe0cx8ftcem66Lm976sW3JGZQPefLb2a7X6pXPdIc+wwcO0B/mQN8RDcN7NAWAP6uJ+Xu7Kwy6CHcjL8LB5vdJRou24JWqhHklOiuBHYlmgZX4bk0AdF3cMdm8HJtO1mQEsK0Xzwfo4IDtq4/eF4XntAGIcG/HATb2VmfWOgfcoD9ing9wsSFWQoJdE4D87j3leV3crAyQ31ORce83fCivgyhEwctViX80CgcFPaOVdBFzaV6EO6WLcGPbLrtvZgrBXnKD4aNaMA5G9wlW8o4z2RIr8ecyBVgUoncomwDtagOwWnWgdDKO8GWqA4gaLeClxIr8L7HavcaKfP8dlMxw0jw/t+WqoMsugOR9XRl81GPTDwtbWMn768rLxTteeNW10Sh534zBfM1kXeHwBsOo56H4V4PY+JhR5KdvP/P8tEnk9yZ+N9pYUXTlqQeY9SBW8uxnRX5q6Trnp4yiQJn1LONw84Os6P1mMQA/ZpKEIuZ/IWDuMol8nbK4Ra9oGhGc8rW1tpVTTjnlxGii/wBMOujKCEbV+gAAAABJRU5ErkJggg==" rel="icon">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #1a1a1a;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        nav {
+            background: #2a2a2a;
+            padding: 15px 0;
+            margin-bottom: 30px;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            color: #1db954;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .auth-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+
+        .choice-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 100px auto;
+        }
+
+        .choice-card {
+            background: #2a2a2a;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .choice-card:hover {
+            transform: translateY(-5px);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background: #3a3a3a;
+            color: white;
+        }
+
+        .btn {
+            background: #1db954;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #1ed760;
+        }
+
+        .btn-danger {
+            background: #dc3545;
+        }
+
+        .btn-danger:hover {
+            background: #bb2d3b;
+        }
+
+        .upload-container, .player-container {
+            background: #2a2a2a;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .choice-container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .nav-content {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .user-info {
+                flex-direction: column;
+            }
+        }
+        .footer {
+    background: #1a1a1a;
+    color: #888;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.footer a {
+    color: #1db954;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Add some bottom padding to the container to prevent footer overlap */
+.container {
+    padding-bottom: 60px;
+}.footer {
+    background: #1a1a1a;
+    color: #888;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.footer a {
+    color: #1db954;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Add some bottom padding to the container to prevent footer overlap */
+.container {
+    padding-bottom: 60px;
+}
+    </style>
+</head>
+<body>
+    <nav>
+    <div class="nav-content">
+        <div class="logo">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEpUlEQVR4nO2Ya0wcVRTHx37QGBdS04dLd3YJFStIrbHSWSi0i/exDxbYZWcH1LIvgk0NiTQ1pPHVLSs0GuWDj6ZNjdaqTS1oipXHDGnS2Bi+mJqYaIxfjNGIMYGUD1gIsR4zs09godCdWTDZf3Ky2ZnZ3P/vnnPPvbMMk1NOOeVksVg2I0TaMCanEaLfIkR+Q4hOIURuIUT+wpj8gBAdQIi2WyzW4nUzY5TSnQjR8wiRWYwprDQQooM1NdS8puYxpp0Y07nVGF8MQk4KgnD3Gpgnb6QasTTaYPdLdVB60gXb+zxQeJkHo+RVovBLHnacbYRHe+qhMmQHRBZlYwxjvClr5gkhTfHB93tsimmjGDW7ktj+uQfKjzgBzcsGuZaVTFRXO+9HiEzKg5rba8E0mJzp1caOM26ocVpTM/GO5gAY0+MJ8yN3Zjw1is974MkYBELkH0JIqWbmw+HwBozJ7/sEOxQOZW4+HiWnXKml1K8ZAEJWTh7kkXddqpk3xkLOaCwLtyilWzUCIEctbiuYVrFgV1xKnzYCjnUnQsgzmgBgTC48cbROVeM7LzSD5wU/BNpC8HTgADgcTnkxn9MEwOms+/7xM03qzfolAfwHQxAKhSAYDEJDgwsotQEh1gm73X6PqubtdufhYDD4b0mfegD0RItiXg6Ph1+4Qx9TzTzG1oOC0KQMVPSVoBpA0/OBBIDd7li4O/+sIgD9saXFpwyU2vsD352AP2cnYXxmAvzXe9KaXO4Zf1swAUBIckOLxU3VABAif8s1uhBANhXXHzMTaQGWe6a5I5kBm03jDPh8vkUllCnAcmsAY/qqagDyi0p8DRQPJAHkkpANysZ817vTAiz3zMIu5HK5lS5EqfWi6l3I4XB0BALBuYe/UK8LyVEm7wOdfgg8G1L2g+bmAzWMVmptbS0v6W+aSdvTP/Eocbtry8YIP8loLaPEj6WdybcawHzIMe9axaFaKOtd+bmJlbw/aWr+vrB5l77feSPd4PLpdK/PAZVBB+x+sU75rPLb074vGD6rh4JwNRQc3wfGoeR9VvRe0cx8ftcem66Lm976sW3JGZQPefLb2a7X6pXPdIc+wwcO0B/mQN8RDcN7NAWAP6uJ+Xu7Kwy6CHcjL8LB5vdJRou24JWqhHklOiuBHYlmgZX4bk0AdF3cMdm8HJtO1mQEsK0Xzwfo4IDtq4/eF4XntAGIcG/HATb2VmfWOgfcoD9ing9wsSFWQoJdE4D87j3leV3crAyQ31ORce83fCivgyhEwctViX80CgcFPaOVdBFzaV6EO6WLcGPbLrtvZgrBXnKD4aNaMA5G9wlW8o4z2RIr8ecyBVgUoncomwDtagOwWnWgdDKO8GWqA4gaLeClxIr8L7HavcaKfP8dlMxw0jw/t+WqoMsugOR9XRl81GPTDwtbWMn768rLxTteeNW10Sh534zBfM1kXeHwBsOo56H4V4PY+JhR5KdvP/P8tEnk9yZ+N9pYUXTlqQeY9SBW8uxnRX5q6Trnp4yiQJn1LONw84Os6P1mMQA/ZpKEIuZ/IWDuMol8nbK4Ra9oGhGc8rW1tpVTTjnlxGii/wBMOujKCEbV+gAAAABJRU5ErkJggg==" 
+                 alt="MuSync Icon" 
+                 style="height: 40px; vertical-align: middle; margin-right: 8px;">
+            MuSync
+        </div>
+        <div class="user-info" id="userInfo">
+            <span id="userDisplay"></span>
+            <button class="btn btn-danger" onclick="logout()" id="logoutBtn" style="display: none;">Logout</button>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="container">
+        <!-- Login Container -->
+        <div id="loginContainer" class="auth-container">
+            <h2 style="margin-bottom: 20px; text-align: center;">Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button class="btn" onclick="login()" style="width: 100%;">Login</button>
+            <p style="text-align: center; margin-top: 10px;">
+                Don't have an account? <a href="#" onclick="showRegisterForm()" style="color: #1db954;">Register</a>
+            </p>
+        </div>
+
+        <!-- Register Container -->
+        <div id="registerContainer" class="auth-container hidden">
+            <h2 style="margin-bottom: 20px; text-align: center;">Register</h2>
+            <input type="text" id="regUsername" placeholder="Username">
+            <input type="password" id="regPassword" placeholder="Password">
+            <button class="btn" onclick="register()" style="width: 100%;">Register</button>
+            <p style="text-align: center; margin-top: 10px;">
+                Already have an account? <a href="#" onclick="showLoginForm()" style="color: #1db954;">Login</a>
+            </p>
+        </div>
+
+        <!-- Choice Container -->
+        <div id="choiceContainer" class="choice-container hidden">
+            <div class="choice-card" onclick="showUploadView()">
+                <h3 style="color: #1db954; margin-bottom: 15px;">Upload Music</h3>
+                <p>Share your music with others</p>
+            </div>
+            <div class="choice-card" onclick="showPlayerView()">
+                <h3 style="color: #1db954; margin-bottom: 15px;">Listen Music</h3>
+                <p>Join a room and listen with others</p>
+            </div>
+        </div>
+
+        <!-- Upload Container -->
+        <div id="uploadContainer" class="upload-container hidden">
+            <!-- Content from the first HTML file -->
+        </div>
+
+        <!-- Player Container -->
+        <div id="playerContainer" class="player-container hidden">
+            <!-- Content from the second HTML file -->
+        </div>
+    </div>
+    <footer class="footer">
+        &copy; 2025 Benji & Shravya. All rights reserved.
+    </footer>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA_-SNMVZQVQM-eDK3aY_kGYg2hFigWTfo",
+            authDomain: "web-test-1-d3b35.firebaseapp.com",
+            databaseURL: "https://web-test-1-d3b35-default-rtdb.firebaseio.com",
+            projectId: "web-test-1-d3b35",
+            storageBucket: "web-test-1-d3b35.appspot.com",
+            messagingSenderId: "1006418965402",
+            appId: "1:1006418965402:web:2f8b1801b2cf7935c1c023",
+            measurementId: "G-DD9YCHZ247"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        window.login = async () => {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const userRef = ref(db, `users/${username}`);
+            const snapshot = await get(userRef);
+
+            if (snapshot.exists() && snapshot.val().password === password) {
+                localStorage.setItem('currentUser', username);
+                checkAuthState();
+            } else {
+                alert('Invalid credentials');
+            }
+        };
+
+        window.register = async () => {
+            const username = document.getElementById('regUsername').value;
+            const password = document.getElementById('regPassword').value;
+
+            if (username.match(/[^a-zA-Z0-9]/)) {
+                alert('Username can only contain letters and numbers');
+                return;
+            }
+
+            const userRef = ref(db, `users/${username}`);
+            const snapshot = await get(userRef);
+
+            if (snapshot.exists()) {
+                alert('Username already exists');
+                return;
+            }
+
+            await set(userRef, { password });
+            alert('Registration successful! Please login.');
+            showLoginForm();
+        };
+
+        window.logout = () => {
+            localStorage.removeItem('currentUser');
+            localStorage.removeItem('currentRoom');
+            checkAuthState();
+        };
+
+        window.showLoginForm = () => {
+            document.getElementById('loginContainer').classList.remove('hidden');
+            document.getElementById('registerContainer').classList.add('hidden');
+        };
+
+        window.showRegisterForm = () => {
+            document.getElementById('loginContainer').classList.add('hidden');
+            document.getElementById('registerContainer').classList.remove('hidden');
+        };
+
+        window.showUploadView = () => {
+            document.getElementById('choiceContainer').classList.add('hidden');
+            document.getElementById('uploadContainer').classList.remove('hidden');
+            window.location.href="./upload.html";
+        };
+
+        window.showPlayerView = () => {
+            document.getElementById('choiceContainer').classList.add('hidden');
+            document.getElementById('playerContainer').classList.remove('hidden');
+            window.location.href="./player.html";
+        };
+
+        function checkAuthState() {
+            const currentUser = localStorage.getItem('currentUser');
+            const currentRoom = localStorage.getItem('currentRoom');
+
+            const containers = ['loginContainer', 'registerContainer', 'choiceContainer', 'uploadContainer', 'playerContainer'];
+            containers.forEach(id => document.getElementById(id).classList.add('hidden'));
+
+            if (currentUser) {
+                document.getElementById('userDisplay').textContent = `Welcome, ${currentUser}!`;
+                document.getElementById('logoutBtn').style.display = 'block';
+
+                if (currentRoom) {
+                    document.getElementById('playerContainer').classList.remove('hidden');
+                    loadPlayerContent();
+                } else {
+                    document.getElementById('choiceContainer').classList.remove('hidden');
+                }
+            } else {
+                document.getElementById('userDisplay').textContent = '';
+                document.getElementById('logoutBtn').style.display = 'none';
+                document.getElementById('loginContainer').classList.remove('hidden');
+            }
+        }
+
+        // async function loadUploadContent() {
+        //     const response = await fetch('paste.txt');
+        //     const content = await response.text();
+        //     const tempDiv = document.createElement('div');
+        //     tempDiv.innerHTML = content;
+            
+        //     const uploadContainerContent = tempDiv.querySelector('#uploadContainer').innerHTML;
+        //     document.getElementById('uploadContainer').innerHTML = uploadContainerContent;
+        // }
+
+        // async function loadPlayerContent() {
+        //     const response = await fetch('paste-2.txt');
+        //     const content = await response.text();
+        //     const tempDiv = document.createElement('div');
+        //     tempDiv.innerHTML = content;
+            
+        //     const playerContainerContent = tempDiv.querySelector('#playerContainer').innerHTML;
+        //     document.getElementById('playerContainer').innerHTML = playerContainerContent;
+        // }
+
+        // Check auth state on page load
+        checkAuthState();
+
+        // Make functions globally available
+        window.checkAuthState = checkAuthState;
+    </script>
+</body>
+</html>

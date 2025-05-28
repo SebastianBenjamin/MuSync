@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MuSync/Upload</title>
+     <link  href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEpUlEQVR4nO2Ya0wcVRTHx37QGBdS04dLd3YJFStIrbHSWSi0i/exDxbYZWcH1LIvgk0NiTQ1pPHVLSs0GuWDj6ZNjdaqTS1oipXHDGnS2Bi+mJqYaIxfjNGIMYGUD1gIsR4zs09godCdWTDZf3Ky2ZnZ3P/vnnPPvbMMk1NOOeVksVg2I0TaMCanEaLfIkR+Q4hOIURuIUT+wpj8gBAdQIi2WyzW4nUzY5TSnQjR8wiRWYwprDQQooM1NdS8puYxpp0Y07nVGF8MQk4KgnD3Gpgnb6QasTTaYPdLdVB60gXb+zxQeJkHo+RVovBLHnacbYRHe+qhMmQHRBZlYwxjvClr5gkhTfHB93tsimmjGDW7ktj+uQfKjzgBzcsGuZaVTFRXO+9HiEzKg5rba8E0mJzp1caOM26ocVpTM/GO5gAY0+MJ8yN3Zjw1is974MkYBELkH0JIqWbmw+HwBozJ7/sEOxQOZW4+HiWnXKml1K8ZAEJWTh7kkXddqpk3xkLOaCwLtyilWzUCIEctbiuYVrFgV1xKnzYCjnUnQsgzmgBgTC48cbROVeM7LzSD5wU/BNpC8HTgADgcTnkxn9MEwOms+/7xM03qzfolAfwHQxAKhSAYDEJDgwsotQEh1gm73X6PqubtdufhYDD4b0mfegD0RItiXg6Ph1+4Qx9TzTzG1oOC0KQMVPSVoBpA0/OBBIDd7li4O/+sIgD9saXFpwyU2vsD352AP2cnYXxmAvzXe9KaXO4Zf1swAUBIckOLxU3VABAif8s1uhBANhXXHzMTaQGWe6a5I5kBm03jDPh8vkUllCnAcmsAY/qqagDyi0p8DRQPJAHkkpANysZ817vTAiz3zMIu5HK5lS5EqfWi6l3I4XB0BALBuYe/UK8LyVEm7wOdfgg8G1L2g+bmAzWMVmptbS0v6W+aSdvTP/Eocbtry8YIP8loLaPEj6WdybcawHzIMe9axaFaKOtd+bmJlbw/aWr+vrB5l77feSPd4PLpdK/PAZVBB+x+sU75rPLb074vGD6rh4JwNRQc3wfGoeR9VvRe0cx8ftcem66Lm976sW3JGZQPefLb2a7X6pXPdIc+wwcO0B/mQN8RDcN7NAWAP6uJ+Xu7Kwy6CHcjL8LB5vdJRou24JWqhHklOiuBHYlmgZX4bk0AdF3cMdm8HJtO1mQEsK0Xzwfo4IDtq4/eF4XntAGIcG/HATb2VmfWOgfcoD9ing9wsSFWQoJdE4D87j3leV3crAyQ31ORce83fCivgyhEwctViX80CgcFPaOVdBFzaV6EO6WLcGPbLrtvZgrBXnKD4aNaMA5G9wlW8o4z2RIr8ecyBVgUoncomwDtagOwWnWgdDKO8GWqA4gaLeClxIr8L7HavcaKfP8dlMxw0jw/t+WqoMsugOR9XRl81GPTDwtbWMn768rLxTteeNW10Sh534zBfM1kXeHwBsOo56H4V4PY+JhR5KdvP/P8tEnk9yZ+N9pYUXTlqQeY9SBW8uxnRX5q6Trnp4yiQJn1LONw84Os6P1mMQA/ZpKEIuZ/IWDuMol8nbK4Ra9oGhGc8rW1tpVTTjnlxGii/wBMOujKCEbV+gAAAABJRU5ErkJggg==" rel="icon">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #1a1a1a;
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+
+            background-color: #2a2a2a;
+            
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1db954;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #198d42;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background: #3a3a3a;
+            color: white;
+        }
+        .btn-logout{
+            background-color: rgb(172, 2, 2) !important;
+        }
+        .btn-logout:hover{
+            background-color: rgb(109, 3, 3) !important;
+
+        }
+
+        button,.btn-logout {
+            background: #198d42;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #136831;
+        }
+
+        .delete-btn {
+            background: #dc3545;
+            padding: 5px 10px;
+            width: auto;
+            margin-left: 10px;
+        }
+        
+
+        .edit-btn {
+            background: #28a745;
+            padding: 5px 10px;
+            width: auto;
+            margin-left: 10px;
+        }
+
+        .play-btn {
+            background: #1a73e8;
+            padding: 5px 10px;
+            width: auto;
+            margin-left: 10px;
+        }
+
+        .playing {
+            background: #ff5722;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            margin: 10px 0;
+            overflow: hidden;
+            display: none;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background: #1db954;
+            transition: width 0.3s ease;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 400px;
+            width: 90%;
+            color: black;
+        }
+
+        .songs-list {
+            margin-top: 20px;
+        }
+
+        .song-item {
+            background-color: #3a3a3a;
+            padding: 10px;
+            
+            border-radius: 4px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .song-info {
+            flex-grow: 1;
+        }
+
+        .song-actions {
+            display: flex;
+            gap: 5px;
+        }
+
+        .cancel-btn {
+            background: #6c757d;
+          
+        }
+
+        .audio-preview {
+            margin: 15px 0;
+            width: 100%;
+            display: none;
+        }
+
+        .audio-preview audio {
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            button {
+                padding: 8px 16px;
+            }
+        }
+        /* Add to your existing CSS */
+.footer {
+    background: #1a1a1a;
+    color: #888;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.footer a {
+    color: #1db954;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Add some bottom padding to the container to prevent footer overlap */
+.container {
+    padding-bottom: 60px;
+}
+    </style>
+</head>
+<body>
+  
+    <div class="container" id="uploadContainer" style="display: none;">
+        <h1 id="formTitle">Upload Song</h1>
+        <div class="user-header">
+            <span>Welcome,&nbsp;<span style="font-weight: bold; color: #198d42;" id="userDisplayName"></span>&nbsp;!</span>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="songName">Song Name:</label>
+            <input type="text" id="songName" required>
+        </div>
+        <div class="form-group">
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" required>
+        </div>
+        <div class="form-group">
+            <label for="artistName">Artist Name:</label>
+            <input type="text" id="artistName" required>
+        </div>
+        <div class="form-group">
+            <label for="songFile">Song File:</label>
+            <input type="file" id="songFile" accept="audio/*" required onchange="handleFileSelect(event)">
+        </div>
+        <div class="audio-preview" id="uploadPreview">
+            <audio controls id="previewAudio"></audio>
+        </div>
+        <div class="progress-bar" id="progressBar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+
+            <button id="submitButton" onclick="uploadSong()">Upload</button>
+            <button id="cancelButton" onclick="cancelEdit()" class="cancel-btn" style="display: none;">Cancel</button>
+            <button onclick="logout()" class="btn-logout">Logout</button>
+        </div>
+
+        <div class="songs-list" id="songsList">
+            <h2>Your Songs</h2>
+            <br>
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <p id="modalMessage"></p>
+            <button onclick="closeModal()" style="margin-top: 10px;">Close</button>
+        </div>
+    </div>
+    <footer class="footer">
+        &copy; 2025 Benji & Shravya. All rights reserved.
+    </footer>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { getDatabase, ref, set, get, child, remove } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+        import { getStorage, ref as storageRef, uploadBytesResumable, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-storage.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA_-SNMVZQVQM-eDK3aY_kGYg2hFigWTfo",
+            authDomain: "web-test-1-d3b35.firebaseapp.com",
+            databaseURL: "https://web-test-1-d3b35-default-rtdb.firebaseio.com",
+            projectId: "web-test-1-d3b35",
+            storageBucket: "web-test-1-d3b35.appspot.com",
+            messagingSenderId: "1006418965402",
+            appId: "1:1006418965402:web:2f8b1801b2cf7935c1c023",
+            measurementId: "G-DD9YCHZ247"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const storage = getStorage(app);
+
+        let currentUser = localStorage.getItem('currentUser');
+        let isEditing = false;
+        let currentEditingSong = null;
+        let currentAudio = null;
+
+        window.handleFileSelect = function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const preview = document.getElementById('uploadPreview');
+                const audio = document.getElementById('previewAudio');
+                
+                const fileURL = URL.createObjectURL(file);
+                audio.src = fileURL;
+                preview.style.display = 'block';
+            }
+        };
+
+        window.playPause = function(songUrl, button) {
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+                
+                // Reset all play buttons
+                document.querySelectorAll('.play-btn').forEach(btn => {
+                    btn.textContent = 'Play';
+                    btn.classList.remove('playing');
+                });
+            }
+
+            if (!currentAudio || currentAudio.src !== songUrl) {
+                currentAudio = new Audio(songUrl);
+                currentAudio.play();
+                button.textContent = 'Pause';
+                button.classList.add('playing');
+
+                currentAudio.onended = function() {
+                    button.textContent = 'Play';
+                    button.classList.remove('playing');
+                };
+            }
+        };
+
+     
+
+        
+                   
+
+       
+
+
+        window.uploadSong = async function() {
+            const songName = document.getElementById('songName').value;
+            const genre = document.getElementById('genre').value;
+            const artistName = document.getElementById('artistName').value;
+            const songFile = document.getElementById('songFile').files[0];
+
+            if (!songName || !genre || !artistName) {
+                showModal("Please fill all fields");
+                return;
+            }
+
+            if (!isEditing && !songFile) {
+                showModal("Please select a song file");
+                return;
+            }
+
+            const songRef = ref(db, `songs/${songName}`);
+            const snapshot = await get(songRef);
+
+            if (snapshot.exists() && !isEditing) {
+                showModal("A song with this name already exists");
+                return;
+            }
+
+            if (isEditing && currentEditingSong && currentEditingSong.name !== songName) {
+                await remove(ref(db, `songs/${currentEditingSong.name}`));
+            }
+
+            document.getElementById('progressBar').style.display = 'block';
+
+            if (songFile) {
+                const storageReference = storageRef(storage, `songs/${currentUser}/${songName}`);
+                const uploadTask = uploadBytesResumable(storageReference, songFile);
+
+                uploadTask.on('state_changed',
+                    (snapshot) => {
+                        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                        document.getElementById('progress').style.width = progress + '%';
+                    },
+                    (error) => {
+                        showModal("Upload failed: " + error.message);
+                    },
+                    async () => {
+                        const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+                        await updateSongDetails(songName, genre, artistName, downloadURL);
+                    }
+                );
+            } else {
+                await updateSongDetails(songName, genre, artistName, currentEditingSong.url);
+            }
+        };
+
+        async function updateSongDetails(songName, genre, artistName, downloadURL) {
+            await set(ref(db, `songs/${songName}`), {
+                name: songName,
+                genre: genre,
+                artist: artistName,
+                url: downloadURL,
+                uploadedBy: currentUser
+            });
+            set(ref(db,`Genre/${genre}`),genre);
+
+            document.getElementById('progressBar').style.display = 'none';
+            document.getElementById('progress').style.width = '0%';
+            clearInputs();
+            showModal(isEditing ? "Song updated successfully!" : "Song uploaded successfully!");
+            resetForm();
+            loadUserSongs();
+        }
+
+        window.loadUserSongs = async function() {
+            const songsRef = ref(db, 'songs');
+            const snapshot = await get(songsRef);
+            const songsList = document.getElementById('songsList');
+            songsList.innerHTML = '<h2>Your Songs</h2>';
+
+            if (snapshot.exists()) {
+                const songs = snapshot.val();
+                Object.values(songs).forEach(song => {
+                    if (song.uploadedBy === currentUser) {
+                        const songElement = document.createElement('div');
+                        songElement.className = 'song-item';
+                        songElement.innerHTML = `
+                            <div class="song-info">
+                                <strong>${song.name}</strong><br>
+                                Artist: ${song.artist}<br>
+                                Genre: ${song.genre}
+                            </div>
+                            <div class="song-actions">
+                                <button class="play-btn" onclick="playPause('${song.url}', this)">Play</button>
+                                <button class="edit-btn" onclick="editSong('${song.name}')">Edit</button>
+                                <button class="delete-btn" onclick="deleteSong('${song.name}', true)">Delete</button>
+                            </div>
+                        `;
+                        songsList.appendChild(songElement);
+                    }
+                });
+            }
+        };
+
+        window.editSong = async function(songName) {
+            const songRef = ref(db, `songs/${songName}`);
+            const snapshot = await get(songRef);
+            
+            if (snapshot.exists()) {
+                const song = snapshot.val();
+                currentEditingSong = song;
+                isEditing = true;
+                
+                document.getElementById('songName').value = song.name;
+                document.getElementById('genre').value = song.genre;
+                document.getElementById('artistName').value = song.artist;
+                document.getElementById('songFile').required = false;
+                document.getElementById('songFile').disabled = true;
+                
+                document.getElementById('formTitle').textContent = 'Edit Song';
+                document.getElementById('submitButton').textContent = 'Update';
+                document.getElementById('cancelButton').style.display = 'block';
+            }
+        };
+
+        window.deleteSong = async function(songName, showConfirmation) {
+            if (showConfirmation && !confirm('Are you sure you want to delete this song?')) {
+                return;
+            }
+
+            try {
+                // Delete from Storage
+                const songStorageRef = storageRef(storage, `songs/${currentUser}/${songName}`);
+                await deleteObject(songStorageRef);
+
+                // Delete from Database
+                await remove(ref(db, `songs/${songName}`));
+
+                if (showConfirmation) {
+                    showModal("Song deleted successfully!");
+                }
+                loadUserSongs();
+            } catch (error) {
+                if (showConfirmation) {
+                    showModal("Error deleting song: " + error.message);
+                }
+            }
+        };
+
+        window.cancelEdit = function() {
+            resetForm();
+            document.getElementById('uploadPreview').style.display = 'none';
+        };
+
+        function resetForm() {
+            isEditing = false;
+            currentEditingSong = null;
+            clearInputs();
+            document.getElementById('formTitle').textContent = 'Upload Song';
+            document.getElementById('submitButton').textContent = 'Upload';
+            document.getElementById('cancelButton').style.display = 'none';
+            document.getElementById('songFile').required = true;
+            document.getElementById('songFile').disabled = false;
+            
+            // Reset audio preview
+            document.getElementById('uploadPreview').style.display = 'none';
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio = null;
+            }
+        }
+
+        window.logout = function() {
+            currentUser = null;
+            localStorage.removeItem('currentUser');
+            localStorage.removeItem('userPassword');
+          window.history.back();
+            clearInputs();
+            resetForm();
+            
+            // Stop any playing audio
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio = null;
+            }
+        };
+
+       
+
+        window.showUploadForm = function() {
+           
+            document.getElementById('uploadContainer').style.display = 'block';
+        };
+
+        window.showModal = function(message) {
+            document.getElementById('modalMessage').textContent = message;
+            document.getElementById('modal').style.display = 'block';
+        };
+
+        window.closeModal = function() {
+            document.getElementById('modal').style.display = 'none';
+        };
+
+        function clearInputs() {
+            document.getElementById('songName').value = '';
+            document.getElementById('genre').value = '';
+            document.getElementById('artistName').value = '';
+            document.getElementById('songFile').value = '';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        };
+        document.getElementById('userDisplayName').textContent = currentUser;
+                    showUploadForm();
+                    loadUserSongs();
+    </script>
+</body>
+</html>
