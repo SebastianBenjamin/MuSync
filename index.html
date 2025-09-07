@@ -165,7 +165,6 @@
     text-decoration: underline;
 }
 
-/* Add some bottom padding to the container to prevent footer overlap */
 .container {
     padding-bottom: 60px;
 }.footer {
@@ -190,7 +189,6 @@
     text-decoration: underline;
 }
 
-/* Add some bottom padding to the container to prevent footer overlap */
 .container {
     padding-bottom: 60px;
 }
@@ -214,7 +212,6 @@
 
 
     <div class="container">
-        <!-- Login Container -->
         <div id="loginContainer" class="auth-container">
             <h2 style="margin-bottom: 20px; text-align: center;">Login</h2>
             <input type="text" id="username" placeholder="Username">
@@ -225,7 +222,6 @@
             </p>
         </div>
 
-        <!-- Register Container -->
         <div id="registerContainer" class="auth-container hidden">
             <h2 style="margin-bottom: 20px; text-align: center;">Register</h2>
             <input type="text" id="regUsername" placeholder="Username">
@@ -236,7 +232,6 @@
             </p>
         </div>
 
-        <!-- Choice Container -->
         <div id="choiceContainer" class="choice-container hidden">
             <div class="choice-card" onclick="showUploadView()">
                 <h3 style="color: #1db954; margin-bottom: 15px;">Upload Music</h3>
@@ -248,14 +243,10 @@
             </div>
         </div>
 
-        <!-- Upload Container -->
         <div id="uploadContainer" class="upload-container hidden">
-            <!-- Content from the first HTML file -->
         </div>
 
-        <!-- Player Container -->
         <div id="playerContainer" class="player-container hidden">
-            <!-- Content from the second HTML file -->
         </div>
     </div>
     <footer class="footer">
@@ -369,30 +360,8 @@
             }
         }
 
-        // async function loadUploadContent() {
-        //     const response = await fetch('paste.txt');
-        //     const content = await response.text();
-        //     const tempDiv = document.createElement('div');
-        //     tempDiv.innerHTML = content;
-            
-        //     const uploadContainerContent = tempDiv.querySelector('#uploadContainer').innerHTML;
-        //     document.getElementById('uploadContainer').innerHTML = uploadContainerContent;
-        // }
-
-        // async function loadPlayerContent() {
-        //     const response = await fetch('paste-2.txt');
-        //     const content = await response.text();
-        //     const tempDiv = document.createElement('div');
-        //     tempDiv.innerHTML = content;
-            
-        //     const playerContainerContent = tempDiv.querySelector('#playerContainer').innerHTML;
-        //     document.getElementById('playerContainer').innerHTML = playerContainerContent;
-        // }
-
-        // Check auth state on page load
         checkAuthState();
 
-        // Make functions globally available
         window.checkAuthState = checkAuthState;
     </script>
 </body>

@@ -195,7 +195,7 @@
                 padding: 8px 16px;
             }
         }
-        /* Add to your existing CSS */
+       
 .footer {
     background: #1a1a1a;
     color: #888;
@@ -218,7 +218,6 @@
     text-decoration: underline;
 }
 
-/* Add some bottom padding to the container to prevent footer overlap */
 .container {
     padding-bottom: 60px;
 }
@@ -319,7 +318,6 @@
                 currentAudio.pause();
                 currentAudio.currentTime = 0;
                 
-                // Reset all play buttons
                 document.querySelectorAll('.play-btn').forEach(btn => {
                     btn.textContent = 'Play';
                     btn.classList.remove('playing');
@@ -474,11 +472,9 @@
             }
 
             try {
-                // Delete from Storage
                 const songStorageRef = storageRef(storage, `songs/${currentUser}/${songName}`);
                 await deleteObject(songStorageRef);
 
-                // Delete from Database
                 await remove(ref(db, `songs/${songName}`));
 
                 if (showConfirmation) {
@@ -507,7 +503,6 @@
             document.getElementById('songFile').required = true;
             document.getElementById('songFile').disabled = false;
             
-            // Reset audio preview
             document.getElementById('uploadPreview').style.display = 'none';
             if (currentAudio) {
                 currentAudio.pause();
@@ -523,7 +518,6 @@
             clearInputs();
             resetForm();
             
-            // Stop any playing audio
             if (currentAudio) {
                 currentAudio.pause();
                 currentAudio = null;
