@@ -1,10 +1,11 @@
 
 
-# 🎵 MuSync
+# <img width="48" height="48" alt="image" src="https://github.com/user-attachments/assets/5c23dbe0-e95a-48c7-9e07-4b573acae728" />  MuSync
 
 MuSync is a real-time collaborative music-sharing platform that enables users to upload songs, create or join themed music rooms, and enjoy synchronized playback experiences with others. The application leverages Firebase for authentication, real-time database, and cloud storage to deliver a seamless and interactive musical environment.
 
-**Live Demo**: [https://play-musync.netlify.app/](https://play-musync.netlify.app/)
+
+**Live Demo**: [Click here](https://play-musync.netlify.app/)
 
 ---
 
