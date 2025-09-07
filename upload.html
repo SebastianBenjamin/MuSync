@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MuSync/Upload</title>
-     <link  href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEpUlEQVR4nO2Ya0wcVRTHx37QGBdS04dLd3YJFStIrbHSWSi0i/exDxbYZWcH1LIvgk0NiTQ1pPHVLSs0GuWDj6ZNjdaqTS1oipXHDGnS2Bi+mJqYaIxfjNGIMYGUD1gIsR4zs09godCdWTDZf3Ky2ZnZ3P/vnnPPvbMMk1NOOeVksVg2I0TaMCanEaLfIkR+Q4hOIURuIUT+wpj8gBAdQIi2WyzW4nUzY5TSnQjR8wiRWYwprDQQooM1NdS8puYxpp0Y07nVGF8MQk4KgnD3Gpgnb6QasTTaYPdLdVB60gXb+zxQeJkHo+RVovBLHnacbYRHe+qhMmQHRBZlYwxjvClr5gkhTfHB93tsimmjGDW7ktj+uQfKjzgBzcsGuZaVTFRXO+9HiEzKg5rba8E0mJzp1caOM26ocVpTM/GO5gAY0+MJ8yN3Zjw1is974MkYBELkH0JIqWbmw+HwBozJ7/sEOxQOZW4+HiWnXKml1K8ZAEJWTh7kkXddqpk3xkLOaCwLtyilWzUCIEctbiuYVrFgV1xKnzYCjnUnQsgzmgBgTC48cbROVeM7LzSD5wU/BNpC8HTgADgcTnkxn9MEwOms+/7xM03qzfolAfwHQxAKhSAYDEJDgwsotQEh1gm73X6PqubtdufhYDD4b0mfegD0RItiXg6Ph1+4Qx9TzTzG1oOC0KQMVPSVoBpA0/OBBIDd7li4O/+sIgD9saXFpwyU2vsD352AP2cnYXxmAvzXe9KaXO4Zf1swAUBIckOLxU3VABAif8s1uhBANhXXHzMTaQGWe6a5I5kBm03jDPh8vkUllCnAcmsAY/qqagDyi0p8DRQPJAHkkpANysZ817vTAiz3zMIu5HK5lS5EqfWi6l3I4XB0BALBuYe/UK8LyVEm7wOdfgg8G1L2g+bmAzWMVmptbS0v6W+aSdvTP/Eocbtry8YIP8loLaPEj6WdybcawHzIMe9axaFaKOtd+bmJlbw/aWr+vrB5l77feSPd4PLpdK/PAZVBB+x+sU75rPLb074vGD6rh4JwNRQc3wfGoeR9VvRe0cx8ftcem66Lm976sW3JGZQPefLb2a7X6pXPdIc+wwcO0B/mQN8RDcN7NAWAP6uJ+Xu7Kwy6CHcjL8LB5vdJRou24JWqhHklOiuBHYlmgZX4bk0AdF3cMdm8HJtO1mQEsK0Xzwfo4IDtq4/eF4XntAGIcG/HATb2VmfWOgfcoD9ing9wsSFWQoJdE4D87j3leV3crAyQ31ORce83fCivgyhEwctViX80CgcFPaOVdBFzaV6EO6WLcGPbLrtvZgrBXnKD4aNaMA5G9wlW8o4z2RIr8ecyBVgUoncomwDtagOwWnWgdDKO8GWqA4gaLeClxIr8L7HavcaKfP8dlMxw0jw/t+WqoMsugOR9XRl81GPTDwtbWMn768rLxTteeNW10Sh534zBfM1kXeHwBsOo56H4V4PY+JhR5KdvP/P8tEnk9yZ+N9pYUXTlqQeY9SBW8uxnRX5q6Trnp4yiQJn1LONw84Os6P1mMQA/ZpKEIuZ/IWDuMol8nbK4Ra9oGhGc8rW1tpVTTjnlxGii/wBMOujKCEbV+gAAAABJRU5ErkJggg==" rel="icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sebastian Benjamin, Shravya Salian">
+    <meta name="description"
+        content="MuSync is a real-time collaborative music-sharing platform. Upload songs, create music rooms, and enjoy synchronized playback with friends.">
+    <meta name="keywords"
+        content="MuSync, Music Sharing, Collaborative Music, Real-time Music, Online DJ, Music Rooms, Music Streaming">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="MuSync – Real-time Collaborative Music Sharing">
+    <meta property="og:description"
+        content="Join MuSync to share and listen to music together in real-time. Create rooms, manage playlists, and enjoy synchronized playback.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://play-musync.netlify.app/">
+    <meta property="og:image" content="https://play-musync.netlify.app/image-icon.png">
+
+
+
+    <link rel="icon" href="/image-icon.png" type="image/x-icon">
+
 
     <style>
         * {
@@ -27,10 +46,10 @@
             margin: 0 auto;
 
             background-color: #2a2a2a;
-            
+
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
@@ -58,15 +77,18 @@
             background: #3a3a3a;
             color: white;
         }
-        .btn-logout{
+
+        .btn-logout {
             background-color: rgb(172, 2, 2) !important;
         }
-        .btn-logout:hover{
+
+        .btn-logout:hover {
             background-color: rgb(109, 3, 3) !important;
 
         }
 
-        button,.btn-logout {
+        button,
+        .btn-logout {
             background: #198d42;
             color: white;
             border: none;
@@ -87,7 +109,7 @@
             width: auto;
             margin-left: 10px;
         }
-        
+
 
         .edit-btn {
             background: #28a745;
@@ -131,7 +153,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
         }
 
         .modal-content {
@@ -154,7 +176,7 @@
         .song-item {
             background-color: #3a3a3a;
             padding: 10px;
-            
+
             border-radius: 4px;
             margin-bottom: 10px;
             display: flex;
@@ -173,7 +195,7 @@
 
         .cancel-btn {
             background: #6c757d;
-          
+
         }
 
         .audio-preview {
@@ -195,40 +217,42 @@
                 padding: 8px 16px;
             }
         }
-       
-.footer {
-    background: #1a1a1a;
-    color: #888;
-    text-align: center;
-    padding: 15px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-top: 1px solid #333;
-    font-size: 14px;
-    z-index: 1000;
-}
 
-.footer a {
-    color: #1db954;
-    text-decoration: none;
-}
+        .footer {
+            background: #1a1a1a;
+            color: #888;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid #333;
+            font-size: 14px;
+            z-index: 1000;
+        }
 
-.footer a:hover {
-    text-decoration: underline;
-}
+        .footer a {
+            color: #1db954;
+            text-decoration: none;
+        }
 
-.container {
-    padding-bottom: 60px;
-}
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding-bottom: 60px;
+        }
     </style>
 </head>
+
 <body>
-  
+
     <div class="container" id="uploadContainer" style="display: none;">
         <h1 id="formTitle">Upload Song</h1>
         <div class="user-header">
-            <span>Welcome,&nbsp;<span style="font-weight: bold; color: #198d42;" id="userDisplayName"></span>&nbsp;!</span>
+            <span>Welcome,&nbsp;<span style="font-weight: bold; color: #198d42;"
+                    id="userDisplayName"></span>&nbsp;!</span>
         </div>
         <br>
         <div class="form-group">
@@ -281,7 +305,7 @@
         import { getDatabase, ref, set, get, child, remove } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
         import { getStorage, ref as storageRef, uploadBytesResumable, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-storage.js";
 
-           const firebaseConfig = {
+        const firebaseConfig = {
             apiKey: "AIzaSyA_-SNMVZQVQM-eDK3aY_kGYg2hFigWTfo",
             authDomain: "web-test-1-d3b35.firebaseapp.com",
             databaseURL: "https://web-test-1-d3b35-default-rtdb.firebaseio.com",
@@ -301,23 +325,23 @@
         let currentEditingSong = null;
         let currentAudio = null;
 
-        window.handleFileSelect = function(event) {
+        window.handleFileSelect = function (event) {
             const file = event.target.files[0];
             if (file) {
                 const preview = document.getElementById('uploadPreview');
                 const audio = document.getElementById('previewAudio');
-                
+
                 const fileURL = URL.createObjectURL(file);
                 audio.src = fileURL;
                 preview.style.display = 'block';
             }
         };
 
-        window.playPause = function(songUrl, button) {
+        window.playPause = function (songUrl, button) {
             if (currentAudio) {
                 currentAudio.pause();
                 currentAudio.currentTime = 0;
-                
+
                 document.querySelectorAll('.play-btn').forEach(btn => {
                     btn.textContent = 'Play';
                     btn.classList.remove('playing');
@@ -330,22 +354,22 @@
                 button.textContent = 'Pause';
                 button.classList.add('playing');
 
-                currentAudio.onended = function() {
+                currentAudio.onended = function () {
                     button.textContent = 'Play';
                     button.classList.remove('playing');
                 };
             }
         };
 
-     
-
-        
-                   
-
-       
 
 
-        window.uploadSong = async function() {
+
+
+
+
+
+
+        window.uploadSong = async function () {
             const songName = document.getElementById('songName').value;
             const genre = document.getElementById('genre').value;
             const artistName = document.getElementById('artistName').value;
@@ -405,7 +429,7 @@
                 url: downloadURL,
                 uploadedBy: currentUser
             });
-            set(ref(db,`Genre/${genre}`),genre);
+            set(ref(db, `Genre/${genre}`), genre);
 
             document.getElementById('progressBar').style.display = 'none';
             document.getElementById('progress').style.width = '0%';
@@ -415,7 +439,7 @@
             loadUserSongs();
         }
 
-        window.loadUserSongs = async function() {
+        window.loadUserSongs = async function () {
             const songsRef = ref(db, 'songs');
             const snapshot = await get(songsRef);
             const songsList = document.getElementById('songsList');
@@ -445,28 +469,28 @@
             }
         };
 
-        window.editSong = async function(songName) {
+        window.editSong = async function (songName) {
             const songRef = ref(db, `songs/${songName}`);
             const snapshot = await get(songRef);
-            
+
             if (snapshot.exists()) {
                 const song = snapshot.val();
                 currentEditingSong = song;
                 isEditing = true;
-                
+
                 document.getElementById('songName').value = song.name;
                 document.getElementById('genre').value = song.genre;
                 document.getElementById('artistName').value = song.artist;
                 document.getElementById('songFile').required = false;
                 document.getElementById('songFile').disabled = true;
-                
+
                 document.getElementById('formTitle').textContent = 'Edit Song';
                 document.getElementById('submitButton').textContent = 'Update';
                 document.getElementById('cancelButton').style.display = 'block';
             }
         };
 
-        window.deleteSong = async function(songName, showConfirmation) {
+        window.deleteSong = async function (songName, showConfirmation) {
             if (showConfirmation && !confirm('Are you sure you want to delete this song?')) {
                 return;
             }
@@ -488,7 +512,7 @@
             }
         };
 
-        window.cancelEdit = function() {
+        window.cancelEdit = function () {
             resetForm();
             document.getElementById('uploadPreview').style.display = 'none';
         };
@@ -502,7 +526,7 @@
             document.getElementById('cancelButton').style.display = 'none';
             document.getElementById('songFile').required = true;
             document.getElementById('songFile').disabled = false;
-            
+
             document.getElementById('uploadPreview').style.display = 'none';
             if (currentAudio) {
                 currentAudio.pause();
@@ -510,33 +534,33 @@
             }
         }
 
-        window.logout = function() {
+        window.logout = function () {
             currentUser = null;
             localStorage.removeItem('currentUser');
             localStorage.removeItem('userPassword');
-          window.history.back();
+            window.history.back();
             clearInputs();
             resetForm();
-            
+
             if (currentAudio) {
                 currentAudio.pause();
                 currentAudio = null;
             }
         };
 
-       
 
-        window.showUploadForm = function() {
-           
+
+        window.showUploadForm = function () {
+
             document.getElementById('uploadContainer').style.display = 'block';
         };
 
-        window.showModal = function(message) {
+        window.showModal = function (message) {
             document.getElementById('modalMessage').textContent = message;
             document.getElementById('modal').style.display = 'block';
         };
 
-        window.closeModal = function() {
+        window.closeModal = function () {
             document.getElementById('modal').style.display = 'none';
         };
 
@@ -547,15 +571,16 @@
             document.getElementById('songFile').value = '';
         }
 
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             const modal = document.getElementById('modal');
             if (event.target == modal) {
                 closeModal();
             }
         };
         document.getElementById('userDisplayName').textContent = currentUser;
-                    showUploadForm();
-                    loadUserSongs();
+        showUploadForm();
+        loadUserSongs();
     </script>
 </body>
+
 </html>
